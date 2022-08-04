@@ -34,14 +34,14 @@ class RegisterController extends Controller
                 if($validation){
                     $user=new User;
                     if($request->hasFile('avatar')){
-                        $avatar=$request->file('avatar')->store('pulic/avatar');
+                        $avatar=$request->file('avatar')->store('public/avatar');
                         $url=Storage::url($avatar);
                         $user->avatar=$url;
                         $user->userName=$request->userName;
                         $user->nombres=$request->nombres;
                         $user->apellidos=$request->apellidos;
                         $user->celular=$request->celular;
-                        $user->password=$request->password;
+                        $user->password=Hash::make($request->password);
                         $user->save();
                         Alert::success('ingreso satisfactoriamente');
                         return redirect()->route('verLogin');

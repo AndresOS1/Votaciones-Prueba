@@ -20,37 +20,39 @@ class LoginController extends Controller
     }
     public function login(Request $request)
     {
-        
-        if($user=User::where('userName','=',$request->userName)){   
-            $validation=Validator::make($request->all(),[
-                    'userName'=>'required',
-                    'password'=>'required'
-            ]);
-            $token=$user->createToken('auth_token')->plainTextToken;
-            if(Hash::check($reuqest->password,$user->password)){
-                $credencials=[
+        if($user=User::where('userName','=',$request->userName)->first()){
+            
+            if(Hash::check($request->password,$user->password))
+            {
+                $credenciales=[
                     'userName'=>$request->userName,
-                    'password'=>$request->password,
+                    'password'=>$request->password
                 ];
-                if(Auth::attempt($credencials)){
-                    Alert::success('entraste satisfactoriamente');
-                    return redirect()->route('home');
-                }else{
-                    Alert::error('contraseña incorrecta');
-                   return view('Auth.Login');  
-                }
+            $token=$user->createToken('auth_token')->plainTextToken;
+            if(Auth::attempt($credenciales)){
+                    //    return redirect()->route();
+
+                    Alert::success('inicio de sesion correcto');
+                    return redirect()->route('home', compact('user'));
             }else{
-                return view('Auth.Login');
+
+                    return  redirect()->route('verLogin');
             }
-        }else{
-            Alert::error('nombre de usuario incorrecto');
-            return view('Auth.Login');
-        }
+            } else{
+                Alert::error('inicio de sesion incorrecto');
+                return redirect()->route('verLogin');
+               }
+          }
+           else{
+              Alert::error('inicio de sesion incorrecto');
+              return redirect()->route('verLogin');
+            }  
     }
 
     public function logout(){
           Auth::logout();
-
+          Alert::warning('Cierre de session satisfactorio');
+          return redirect()->route('verLogin');
     }
 
 }

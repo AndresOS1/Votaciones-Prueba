@@ -77,7 +77,7 @@
 
                 <nav class="menu d-flex d-sm-block justify-content-end flex-wrap">
                     <img class="imglogin" src="{{ asset(Auth()->user()->avatar) }}" />
-                    <h5 class="font-1 text1 active ">{{ $user->name }} </h5>
+                    <h5 class="font-1 text1 active ">{{ Auth()->user()->userName}} </h5>
 
 
                 <a class="nav-link d-flex justify-content-center " href="">Opcion 1</a>
