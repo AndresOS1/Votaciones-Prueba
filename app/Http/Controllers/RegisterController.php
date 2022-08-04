@@ -21,7 +21,7 @@ class RegisterController extends Controller
     }
     public function register()
     {
-         if(!$user_name=User::where('userName','=',$request->userName)){   
+         if(!$userName=User::where('userName','=',$request->userName)){   
                 $validation=Validator::make($request->all(),[
                     'avatar '=>'required',
                     'userName'=>'required',
@@ -41,10 +41,15 @@ class RegisterController extends Controller
                         $user->apellidos=$request->apellidos;
                         $user->celular=$request->celular;
                         $user->save();
+                        Alert::success('ingreso satisfactoriamente');
+                        return redirect()->route('verLogin');
                     }
+                }else{
+                    Alert::error('falta un campo');
+                    return view('Auth.Register');
                 }
             }else{
-                Alert::succes('el nombre de usuario ya existe');
+                Alert::error('el nombre de usuario ya existe');
                 return view('Auth.Register');
             }
     }
