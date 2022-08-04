@@ -8,6 +8,15 @@ class HomeController extends Controller
 {
     //
     public function verHome(){
-         return view('Home');
+
+        if(Auth::user()){
+            $user=Auth()->user();
+             return view('layouts.home', compact('user'));
+           } 
+           else{
+            return redirect()->route('verLogin');
+           }
+        
+        
     }
 }
