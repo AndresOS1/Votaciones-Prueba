@@ -56,11 +56,11 @@ class PuestosDeVotacionesController extends Controller
                 return redirec()->route('PuestosDeVotaciones.index');
             }else{
                 Alert::error('algo a malido sal');
-
+                return redirect()->route('PuestosDeVotaciones.create');
             }
         }else{
             Alert::error('falta un campo');
-            return redirect()->route('PuestosDeVotaciones.index');
+            return redirect()->route('PuestosDeVotaciones.create');
         }
         
     }
@@ -82,9 +82,11 @@ class PuestosDeVotacionesController extends Controller
      * @param  \App\Models\PuestosDeVotaciones  $puestosDeVotaciones
      * @return \Illuminate\Http\Response
      */
-    public function edit(PuestosDeVotaciones $puestosDeVotaciones)
+    public function edit($id)
     {
         //
+        $PuestosDeVotaciones=PuestosDeVotaciones::find($id);
+        return view ('PuestosDeVotaciones.edit',$PuestosDeVotaciones);
     }
 
     /**
@@ -94,9 +96,31 @@ class PuestosDeVotacionesController extends Controller
      * @param  \App\Models\PuestosDeVotaciones  $puestosDeVotaciones
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PuestosDeVotaciones $puestosDeVotaciones)
+    public function update(Request $request,$id)
     {
         //
+         $validation=Validator::make($request->all(),[
+                     'nombre'=>'required',
+                     'direccion'=>'required',
+                     'municipio_id'=>'required',
+         ]);
+        if(!$validation->fails()){
+            $PuestosDeVotaciones=PuestosDeVotaciones::find($id);
+            $PuestosDeVotaciones->nombre=$request->nombre;
+            $PuestosDeVotaciones->direccion=$request->direccion;
+            $PuestosDeVotaciones->municipio_id=$request->municipio_id;
+            $PuestosDeVotaciones->save();
+            if($PuestosDeVotaciones){
+                Alert::success('Puesto de votaciones editado');
+                return redirect()->route('PuestosDeVotaciones.index');
+            }else{
+                Alert::error('algo a malido sal');
+                return redirect()->route('PuestosDeVotaciones.edit');
+            }
+        }else{
+            Alert::error('falta un campo');
+            return redirect()->route('PuestosDeVotaciones.edit');
+        }
     }
 
     /**
@@ -105,8 +129,11 @@ class PuestosDeVotacionesController extends Controller
      * @param  \App\Models\PuestosDeVotaciones  $puestosDeVotaciones
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PuestosDeVotaciones $puestosDeVotaciones)
+    public function destroy($id)
     {
-        //
+        $PuestosDeVotaciones=PuestosDeVotaciones::findOrfail($id);
+        $PuestosDeVotaciones->delete();
+        Alert::warning('Puesto de votaciones editado');
+        return redirect()->route('PuestosDeVotaciones.index');
     }
 }
