@@ -23,7 +23,7 @@
                             <div class="mb-md-5 mt-md-4 pb-5">
 
                                 <h2 class="fw-bold mb-2 text-uppercase">Registrate</h2>
-                                <form action="" method="POST" enctype="multipart/form-data">
+                                <form action="{{route('register')}}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-outline form-white mb-4 mt-5">
                                         <input type="text" id="text" class="form-control form-control-lg"
@@ -41,7 +41,7 @@
 
                                     <div class="form-outline form-white mb-4 mt-2">
                                         <input type="number" id="" class="form-control form-control-lg"
-                                            name="cedula" required />
+                                            name="celular" required />
                                         <label class="form-label" for="">Num Documento</label>
                                     </div>
 
