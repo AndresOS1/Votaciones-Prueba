@@ -21,25 +21,27 @@ class RegisterController extends Controller
     }
     public function register(Request $request)
     {
-         if($userName=User::where('userName','=',$request->userName)){   
+        
                 $validation=Validator::make($request->all(),[
-                    'avatar '=>'required',
-                    'userName'=>'required',
                     'nombres'=>'required',
                     'apellidos'=>'required',
                     'celular'=>'required',
+                    'avatar '=>'required',
+                    'userName'=>'required',
                     'password'=>'required'
                 ]);
-                if(!$validation->fails()){
+            if(!$userName=User::where('userName','=',$request->userName)->first()){   
+                if($validation){
                     $user=new User;
                     if($request->hasFile('avatar')){
-                        $avatar=$request->file('avatar')->store('pulic/storage/avatar');
+                        $avatar=$request->file('avatar')->store('pulic/avatar');
                         $url=Storage::url($avatar);
-                        $user->avatar=$request->$url;
-                        $user->userName=$request->$userName;
+                        $user->avatar=$url;
+                        $user->userName=$request->userName;
                         $user->nombres=$request->nombres;
                         $user->apellidos=$request->apellidos;
                         $user->celular=$request->celular;
+                        $user->password=$request->password;
                         $user->save();
                         Alert::success('ingreso satisfactoriamente');
                         return redirect()->route('verLogin');

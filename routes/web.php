@@ -26,6 +26,5 @@ Route::post('/register',[RegisterController::class,'register'])->name('register'
 //login//////
 //-verLogin
 Route::get('/verLogin',[LoginController::class,'verLogin'])->name('verLogin');
-
 //home
 Route::get('/home',[HomeController::class,'verHome'])->name('home');
