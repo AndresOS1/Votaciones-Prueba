@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use RealRashid\SweetAlert\Facades\Alert;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Storage;
-use App\Http\Models\User;
+use App\Models\User;
 class LoginController extends Controller
 {
     //
@@ -17,8 +18,9 @@ class LoginController extends Controller
         return view('Auth.Login');
 
     }
-    public function login()
+    public function login(Request $request)
     {
+        
         if($user=User::where('userName','=',$request->userName)){   
             $validation=Validator::make($request->all(),[
                     'userName'=>'required',

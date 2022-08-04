@@ -77,9 +77,9 @@
                                         </div>
                                     </div>
 
-                                    {{-- <div class="form-outline  form-white mb-4">
+                                    <div class="form-outline  form-white mb-4">
                                         <a class="ini" id="inicia" href="{{route('verLogin')}}">Ya tienes cuenta? Inicia Sesion!</a>
-                                    </div> --}}
+                                    </div>
                                 </form>
                             </div>
 
@@ -100,9 +100,8 @@
 
 <style>
     .back1 {
-        background-color: black;
+        background-color: #69A6A4
     }
-
     .btn1 {
         background-color: #DC5716;
         color: #FFFF

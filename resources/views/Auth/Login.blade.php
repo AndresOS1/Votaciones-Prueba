@@ -23,7 +23,7 @@
                             <div class="mb-md-5 mt-md-4 pb-5 ">
 
                                 <h2 class="fw-bold mb-2 text-uppercase">Iniciar Sesion</h2>
-                                <form action="" method="POST" enctype="multipart/form-data">
+                                <form action="{{route('login')}}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-outline form-white mt-5 mb-4">
                                         <input type="text" id="typeEmailX" class="form-control form-control-lg"
@@ -47,9 +47,9 @@
                                                 class="btn btn1 btn-card w-100">Iniciar Sesion</button>
                                         </div>
                                     </div>
-                                    {{-- <div class="form-outline  form-white mb-4 mt-5">
+                                    <div class="form-outline  form-white mb-4 mt-5">
                                         <a class="ini" id="inicia" href="{{route('verRegister')}}">No tienes cuenta? Registrate!</a>
-                                    </div> --}}
+                                    </div>
                                 </form>
                             </div>
 

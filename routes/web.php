@@ -17,7 +17,7 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', function () {
-    return redirect()->route('verRegister');
+    return redirect()->route('verLogin');
 });
 ////Register//////
 //-verRegister
@@ -26,5 +26,6 @@ Route::post('/register',[RegisterController::class,'register'])->name('register'
 //login//////
 //-verLogin
 Route::get('/verLogin',[LoginController::class,'verLogin'])->name('verLogin');
+Route::post('login',[LoginController::class,'login'])->name('login');
 //home
 Route::get('/home',[HomeController::class,'verHome'])->name('home');
