@@ -22,8 +22,7 @@ Route::get('/', function () {
 ////Register//////
 //-verRegister
 Route::get('/verRegister',[RegisterController::class,'verRegister'])->name('verRegister');
-
-
+Route::post('/register',[RegisterController::class,'register'])->name('register');
 //login//////
 //-verLogin
 Route::get('/verLogin',[LoginController::class,'verLogin'])->name('verLogin');

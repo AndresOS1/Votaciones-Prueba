@@ -42,7 +42,7 @@ class RegisterController extends Controller
                         $user->celular=$request->celular;
                         $user->save();
                         Alert::success('ingreso satisfactoriamente');
-                        return redirect()->route('home');
+                        return redirect()->route('verLogin');
                     }
                 }else{
                     Alert::error('falta un campo');
