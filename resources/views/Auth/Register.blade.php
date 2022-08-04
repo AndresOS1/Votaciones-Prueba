@@ -42,7 +42,7 @@
                                     <div class="form-outline form-white mb-4 mt-2">
                                         <input type="number" id="" class="form-control form-control-lg"
                                             name="celular" required />
-                                        <label class="form-label" for="">Num Documento</label>
+                                        <label class="form-label" for="">Telefono</label>
                                     </div>
 
                                     <div class="form-outline form-white mb-4">
