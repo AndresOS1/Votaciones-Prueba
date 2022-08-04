@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,6 @@ Route::get('/verRegister',[RegisterController::class,'verRegister'])->name('verR
 //login//////
 //-verLogin
 Route::get('/verLogin',[LoginController::class,'verLogin'])->name('verLogin');
+
+//home
+Route::get('/home',[HomeController::class,'home'])->name('home');
