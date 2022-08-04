@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('userName',24);
             $table->string('nombres',24);
             $table->string('apellidos',24);
-            $table->integer('celular')->length(10);
+            $table->string('celular')->length(10);
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
