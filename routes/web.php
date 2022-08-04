@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\RegisterControler;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 ////Register//////
-Route::get('/verRegister',[RegisterControler::class,'verRegister'])->name('verRegister');
+//-verRegister
+Route::get('/verRegister',[RegisterController::class,'verRegister'])->name('verRegister');
+
+
+//login//////
+//-verLogin
+Route::get('/verLogin',[LoginController::class,'verLogin'])->name('verLogin');
