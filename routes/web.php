@@ -34,6 +34,7 @@ Route::get('/home',[HomeController::class,'verHome'])->name('home');
 
 //PUESTO DE VOTACIONES
 Route::get('/PuestosDeVotaciones.index',[PuestosDeVotacionesController::class,'index'])->name('PuestosDeVotaciones.index');
-Route::post('/PuestosDeVotaciones.create',[PuestosDeVotacionesController::class,'create'])->name('PuestosDeVotaciones.create');
+Route::get('/PuestosDeVotaciones.create',[PuestosDeVotacionesController::class,'create'])->name('PuestosDeVotaciones.create');
+Route::post('/PuestosDeVotaciones.store',[PuestosDeVotacionesController::class,'store'])->name('PuestosDeVotaciones.store');
 Route::put('/PuestosDeVotaciones.edit',[PuestosDeVotacionesController::class,'edit'])->name('PuestosDeVotaciones.edit');
 Route::delete('/PuestosDeVotaciones.destroy',[PuestosDeVotacionesController::class,'destroy'])->name('PuestosDeVotaciones.destroy');
