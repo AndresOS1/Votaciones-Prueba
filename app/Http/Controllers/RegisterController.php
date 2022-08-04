@@ -10,7 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
-use App\Http\Models\User;
+use App\Models\User;
 
 
 class RegisterController extends Controller
@@ -19,9 +19,9 @@ class RegisterController extends Controller
     {
        return view('Auth.Register');
     }
-    public function register()
+    public function register(Request $request)
     {
-         if(!$userName=User::where('userName','=',$request->userName)){   
+         if($userName=User::where('userName','=',$request->userName)){   
                 $validation=Validator::make($request->all(),[
                     'avatar '=>'required',
                     'userName'=>'required',
