@@ -26,8 +26,8 @@
                                 <form action="" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-outline form-white mt-5 mb-4">
-                                        <input type="email" id="typeEmailX" class="form-control form-control-lg"
-                                            name="email" required/>
+                                        <input type="text" id="typeEmailX" class="form-control form-control-lg"
+                                            name="UserName" required/>
                                         <label class="form-label" for="typeEmailX">User Name</label>
                                     </div>
 

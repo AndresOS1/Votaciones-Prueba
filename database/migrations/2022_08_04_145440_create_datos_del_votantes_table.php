@@ -20,12 +20,12 @@ return new class extends Migration
             $table->string('direccion');
             $table->string('telefono');
             $table->string('cedula');
-            $table->unsignedBigInteger('lider_id')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('barrio_id');
             $table->unsignedBigInteger('puestos_de_votaciones_id');
 
 
-            // $table->foreign('populated_center_id')->references('id_populated_center')->on('populated_centers')->onDelete('set null');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
             $table->foreign('barrio_id')->references('id_barrio')->on('barrios');
             $table->foreign('puestos_de_votaciones_id')->references('id_puesto')->on('puestos_de_votaciones');
 
