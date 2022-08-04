@@ -21,7 +21,7 @@ class RegisterController extends Controller
     }
     public function register()
     {
-         if(!$user_name=User::where('userName','=',$request->userName)){   
+         if(!$userName=User::where('userName','=',$request->userName)){   
                 $validation=Validator::make($request->all(),[
                     'avatar '=>'required',
                     'userName'=>'required',
