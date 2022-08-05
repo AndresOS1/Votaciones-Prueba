@@ -87,7 +87,7 @@ class PuestosDeVotacionesController extends Controller
     public function edit($id)
     {
         //
-        $PuestosDeVotaciones=PuestosDeVotaciones::findOrFail($id);
+        $PuestosDeVotaciones=PuestosDeVotaciones::find($id);
         $municipios=Municipio::all();
         return view ('PuestosDeVotaciones.edit', compact('PuestosDeVotaciones', 'municipios') );
     }
