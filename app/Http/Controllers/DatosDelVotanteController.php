@@ -20,11 +20,12 @@ class DatosDelVotanteController extends Controller
     public function index()
     {
         //
-        $DatosDelVotantes=PuestosDeVotaciones::simplePaginate(7);
+        $DatosDelVotantes=DatosDelVotante::simplePaginate(7);
+        $municipios=Municipio::all();
         $users=User::all();
         $barrios=Barrios::all();
         $PuestosDeVotaciones=PuestosDeVotaciones::all();
-        return view ('DatosDelVotante.index', compact('DatosDelVotantes', 'users','barrios','PuestosDeVotaciones') );
+        return view ('DatosDelVotante.index', compact('DatosDelVotantes', 'users','barrios','PuestosDeVotaciones','municipios') );
     }
 
     /**
@@ -63,18 +64,18 @@ class DatosDelVotanteController extends Controller
                      'puestos_de_votacion_id'=>'required',
          ]);
         if(!$validation->fails()){
-            $PuestosDeVotaciones=new PuestosDeVotaciones();
-            $PuestosDeVotaciones->nombres=$request->nombres;
-            $PuestosDeVotaciones->apellidos=$request->apellidos;
-            $PuestosDeVotaciones->direccion=$request->direccion;
-            $PuestosDeVotaciones->telefono=$request->telefono;
-            $PuestosDeVotaciones->cedula=$request->cedula;
-            $PuestosDeVotaciones->mesa=$request->mesa;
-            $PuestosDeVotaciones->user_id=$request->user_id;
-            $PuestosDeVotaciones->barrio_id=$request->barrio_id;
-            $PuestosDeVotaciones->puestos_de_votacion_id=$request->puestos_de_votacion_id;
-            $PuestosDeVotaciones->save();
-            if($PuestosDeVotaciones){
+            $DatosDelVotante=new DatosDelVotante();
+            $DatosDelVotante->nombres=$request->nombres;
+            $DatosDelVotante->apellidos=$request->apellidos;
+            $DatosDelVotante->direccion=$request->direccion;
+            $DatosDelVotante->telefono=$request->telefono;
+            $DatosDelVotante->cedula=$request->cedula;
+            $DatosDelVotante->mesa=$request->mesa;
+            $DatosDelVotante->user_id=$request->user_id;
+            $DatosDelVotante->barrio_id=$request->barrio_id;
+            $DatosDelVotante->puestos_de_votaciones_id=$request->puestos_de_votacion_id;
+            $DatosDelVotante->save();
+            if($DatosDelVotante){
                 Alert::success('daros del votante creado exitosamente');
                 return redirect()->route('DatosDelVotante.index');
             }else{
@@ -112,7 +113,7 @@ class DatosDelVotanteController extends Controller
     public function edit($id)
     {
         //
-        $DatosDelVotantes=PuestosDeVotaciones::find($id);
+        $DatosDelVotantes=DatosDelVotante::find($id);
         $users=User::all();
         $barrios=Barrios::all();
         $PuestosDeVotaciones=PuestosDeVotaciones::all();
@@ -142,18 +143,18 @@ class DatosDelVotanteController extends Controller
                      'puestos_de_votacion_id'=>'required',
          ]);
         if(!$validation->fails()){
-            $PuestosDeVotaciones=PuestosDeVotaciones::find($id);
-            $PuestosDeVotaciones->nombres=$request->nombres;
-            $PuestosDeVotaciones->apellidos=$request->apellidos;
-            $PuestosDeVotaciones->direccion=$request->direccion;
-            $PuestosDeVotaciones->telefono=$request->telefono;
-            $PuestosDeVotaciones->cedula=$request->cedula;
-            $PuestosDeVotaciones->mesa=$request->mesa;
-            $PuestosDeVotaciones->user_id=$request->user_id;
-            $PuestosDeVotaciones->barrio_id=$request->barrio_id;
-            $PuestosDeVotaciones->puestos_de_votacion_id=$request->puestos_de_votacion_id;
-            $PuestosDeVotaciones->save();
-            if($PuestosDeVotaciones){
+            $DatosDelVotante=DatosDelVotante::find($id);
+            $DatosDelVotante->nombres=$request->nombres;
+            $DatosDelVotante->apellidos=$request->apellidos;
+            $DatosDelVotante->direccion=$request->direccion;
+            $DatosDelVotante->telefono=$request->telefono;
+            $DatosDelVotante->cedula=$request->cedula;
+            $DatosDelVotante->mesa=$request->mesa;
+            $DatosDelVotante->user_id=$request->user_id;
+            $DatosDelVotante->barrio_id=$request->barrio_id;
+            $DatosDelVotante->puestos_de_votacion_id=$request->puestos_de_votacion_id;
+            $DatosDelVotante->save();
+            if($DatosDelVotante){
                 Alert::success('daros del votante creado exitosamente');
                 return redirect()->route('DatosDelVotante.index');
             }else{
@@ -176,7 +177,7 @@ class DatosDelVotanteController extends Controller
     public function destroy($id)
     {
         //
-        $datosDelVotante=PuestosDeVotaciones::findOrfail($id);
+        $DatosDelVotante=DatosDelVotante::findOrfail($id);
         $datosDelVotante->delete();
         Alert::warning('Votante Elimindado Correctamente');
         return redirect()->route('DatosDelVotante.index');
