@@ -75,12 +75,12 @@
 
             <div class="barra-lateral col-12 col-sm-2 border">
 
-                <nav class="menu d-flex d-sm-block justify-content-end flex-wrap">
+                <nav class="menu d-flex d-sm-block justify-content-end flex-wrap nav1">
                     <img class="imglogin" src="{{ asset(Auth()->user()->avatar) }}" />
                     <h5 class="font-1 text1 active ">{{ Auth()->user()->userName}} </h5>
 
 
-                <a class="nav-link d-flex justify-content-center " href="">Opcion 1</a>
+                <a class="nav-link d-flex justify-content-center " href="{{route('PuestosDeVotaciones.create')}}">Opcion 1</a>
                 <a class="nav-link d-flex justify-content-center ">Opcion 2</a>
                 <a class="nav-link d-flex justify-content-center ">Opcion 3</a>
                 <a class="nav-link d-flex justify-content-center ">Opcion 4</a>
@@ -119,6 +119,10 @@
     .miss {
         text-decoration: none;
         color: #FFFF;
+    }
+
+    .nav1{
+        height: 100vh;
     }
 
     .miss:hover {

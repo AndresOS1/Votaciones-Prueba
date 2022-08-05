@@ -29,7 +29,7 @@ class PuestosDeVotacionesController extends Controller
     public function create()
     {
         $municipios=Municipio::all();
-        return view ('PuestosDeVotaciones.create',$municipios);
+        return view ('PuestosDeVotaciones.create',compact('municipios'));
     }
 
     /**
