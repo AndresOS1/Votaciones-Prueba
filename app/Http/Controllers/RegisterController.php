@@ -28,6 +28,7 @@ class RegisterController extends Controller
                     'celular'=>'required',
                     'avatar '=>'required',
                     'userName'=>'required',
+                    'tipoUsuario'=>'required',
                     'password'=>'required'
                 ]);
             if(!$userName=User::where('userName','=',$request->userName)->first()){   
@@ -41,6 +42,7 @@ class RegisterController extends Controller
                         $user->nombres=$request->nombres;
                         $user->apellidos=$request->apellidos;
                         $user->celular=$request->celular;
+                        $user->tipoUsuario=$request->tipoUsuario;
                         $user->password=Hash::make($request->password);
                         $user->save();
                         Alert::success('ingreso satisfactoriamente');
