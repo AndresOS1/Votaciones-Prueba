@@ -8,6 +8,8 @@ use App\Models\PuestosDeVotaciones;
 use App\Models\Municipio;
 use App\Models\User;
 use App\Models\Barrios;
+use Illuminate\Support\Facades\Validator;
+use RealRashid\SweetAlert\Facades\Alert;
 class DatosDelVotanteController extends Controller
 {
     /**
@@ -82,8 +84,11 @@ class DatosDelVotanteController extends Controller
         }else{
             // dd($validation);
             Alert::error('falta un campo');
+            // dd($PuestosDeVotaciones);
             return redirect()->route('DatosDelVotante.create');
         }
+
+         //
     }
 
     /**

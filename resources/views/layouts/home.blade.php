@@ -84,7 +84,8 @@
                         href="{{ route('PuestosDeVotaciones.create') }}">Registrar Puesto</a>
                     <a class="nav-link d-flex justify-content-center "
                         href="{{ route('PuestosDeVotaciones.index') }}">Ver Puestos</a>
-                    <a class="nav-link d-flex justify-content-center ">Opcion 3</a>
+                    <a class="nav-link d-flex justify-content-center "
+                    href="{{route('DatosDelVotante.create')}}">Registrar Votante</a>
                     <a class="nav-link d-flex justify-content-center ">Opcion 4</a>
                 </nav>
 
@@ -195,7 +196,7 @@
         background-color: #437176;
         color: #fff;
         min-width: 250px;
-        min-height: 100vh;
+        min-height: 150vh;
         overflow-y: auto;
     }
 

@@ -5,7 +5,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PuestosDeVotacionesController;
-use App\Http\Controllers\DatosDelVotante;
+use App\Http\Controllers\DatosDelVotanteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,9 +42,9 @@ Route::put('/actualizarpeusto/{id}',[PuestosDeVotacionesController::class,'updat
 Route::delete('/eliminarpuesto/{id}',[PuestosDeVotacionesController::class,'destroy'])->name('eliminarpuesto');
 
 //DATOS DEL VOTANTE
-Route::get('/DatosDelVotante.index',[DatosDelVotante::class,'index'])->name('DatosDelVotante.index');
-Route::get('/DatosDelVotante.create',[DatosDelVotante::class,'create'])->name('DatosDelVotante.create');
-Route::post('/DatosDelVotante.store',[DatosDelVotante::class,'store'])->name('DatosDelVotante.store');
-Route::get('/editarvotante/{id}',[DatosDelVotante::class,'edit'])->name('editarvotante');
-Route::put('/actualizarvotante/{id}',[DatosDelVotante::class,'update'])->name('DatosDelVotante.uptate');
-Route::delete('/eliminarvotante/{id}',[DatosDelVotante::class,'destroy'])->name('eliminarvotante');
+Route::get('/DatosDelVotante.index',[DatosDelVotanteController::class,'index'])->name('DatosDelVotante.index');
+Route::get('/DatosDelVotante.create',[DatosDelVotanteController::class,'create'])->name('DatosDelVotante.create');
+Route::post('/DatosDelVotante.store',[DatosDelVotanteController::class,'store'])->name('DatosDelVotante.store');
+Route::get('/editarvotante/{id}',[DatosDelVotanteController::class,'edit'])->name('editarvotante');
+Route::put('/actualizarvotante/{id}',[DatosDelVotanteController::class,'update'])->name('DatosDelVotante.uptate');
+Route::delete('/eliminarvotante/{id}',[DatosDelVotanteController::class,'destroy'])->name('eliminarvotante');
