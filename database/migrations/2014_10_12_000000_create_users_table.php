@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('userName',24);
             $table->string('nombres',24);
             $table->string('apellidos',24);
-            $table->string('celular')->length(10);
+            $table->string('celular')->length(10); 
+            $table->string('tipoUsuario',24);
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
