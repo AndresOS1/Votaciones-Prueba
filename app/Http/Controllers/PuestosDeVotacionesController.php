@@ -136,7 +136,7 @@ class PuestosDeVotacionesController extends Controller
     {
         $PuestosDeVotaciones=PuestosDeVotaciones::findOrfail($id);
         $PuestosDeVotaciones->delete();
-        Alert::warning('Puesto de votaciones editado');
+        Alert::warning('Puesto de Votaciones Elimindado Correctamente');
         return redirect()->route('PuestosDeVotaciones.index');
     }
 }

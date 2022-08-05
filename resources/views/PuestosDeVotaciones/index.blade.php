@@ -28,8 +28,8 @@
                                     @endif
                                 @endforeach
                                 <td>
-                                    <form action="{{ route('PuestosDeVotaciones.destroy',$PuestosDeVotacion->id_puesto) }}" method="POST">
-                                        <a class="btn btn-sm btn-success" href="{{ route('edit',$PuestosDeVotacion->id_puesto )}}"><i class="bi bi-pencil-square"></i></a>
+                                    <form action="{{ route('eliminarpuesto',$PuestosDeVotacion-> id_puesto)}}" method="POST">
+                                        <a class="btn btn-sm btn-success" href="{{route('editarpuesto',$PuestosDeVotacion->id_puesto)}}"><i class="bi bi-pencil-square"></i></a>
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>

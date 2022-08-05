@@ -80,8 +80,8 @@
                     <h5 class="font-1 text1 active ">{{ Auth()->user()->userName}} </h5>
 
 
-                <a class="nav-link d-flex justify-content-center " href="{{route('PuestosDeVotaciones.create')}}">Opcion 1</a>
-                <a class="nav-link d-flex justify-content-center ">Opcion 2</a>
+                <a class="nav-link d-flex justify-content-center " href="{{route('PuestosDeVotaciones.create')}}">Registrar Puesto</a>
+                <a class="nav-link d-flex justify-content-center " href="{{route('PuestosDeVotaciones.index')}}">Ver Puestos</a>
                 <a class="nav-link d-flex justify-content-center ">Opcion 3</a>
                 <a class="nav-link d-flex justify-content-center ">Opcion 4</a>
                 </nav>
