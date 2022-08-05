@@ -18,7 +18,8 @@ class PuestosDeVotacionesController extends Controller
     {
         //
         $PuestosDeVotaciones=PuestosDeVotaciones::simplePaginate(7);
-        return view ('PuestosDeVotaciones.index',$PuestosDeVotaciones);
+        $municipios=Municipio::all();
+        return view ('PuestosDeVotaciones.index', compact('PuestosDeVotaciones', 'municipios') );
     }
 
     /**
@@ -86,8 +87,9 @@ class PuestosDeVotacionesController extends Controller
     public function edit($id)
     {
         //
-        $PuestosDeVotaciones=PuestosDeVotaciones::find($id);
-        return view ('PuestosDeVotaciones.edit',$PuestosDeVotaciones);
+        $PuestosDeVotaciones=PuestosDeVotaciones::findOrFail($id);
+        $municipios=Municipio::all();
+        return view ('PuestosDeVotaciones.edit', compact('PuestosDeVotaciones', 'municipios') );
     }
 
     /**
