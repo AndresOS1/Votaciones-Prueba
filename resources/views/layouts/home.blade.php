@@ -86,9 +86,9 @@
                         href="{{ route('PuestosDeVotaciones.index') }}">Ver Puestos</a>
                     <a class="nav-link d-flex justify-content-center "
                     href="{{route('DatosDelVotante.create')}}">Registrar Votante</a>
-                    <a class="nav-link d-flex justify-content-center ">Opcion 4</a>
+                    <a class="nav-link d-flex justify-content-center"
+                    href="{{route('DatosDelVotante.index')}}">Votantes</a>
                 </nav>
-
             </div>
 
             <div class="col">

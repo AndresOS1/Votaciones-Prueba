@@ -20,7 +20,7 @@ class DatosDelVotanteController extends Controller
     public function index()
     {
         //
-        $DatosDelVotantes=DatosDelVotante::simplePaginate(7);
+        $DatosDelVotantes=DatosDelVotante::simplePaginate();
         $municipios=Municipio::all();
         $users=User::all();
         $barrios=Barrios::all();
@@ -117,7 +117,7 @@ class DatosDelVotanteController extends Controller
         $users=User::all();
         $barrios=Barrios::all();
         $PuestosDeVotaciones=PuestosDeVotaciones::all();
-        return view ('DatosDelVotante.index', compact('DatosDelVotantes', 'users','barrios','PuestosDeVotaciones') );
+        return view ('DatosDelVotante.edit', compact('DatosDelVotantes', 'users','barrios','PuestosDeVotaciones') );
 
     }
 
@@ -178,7 +178,7 @@ class DatosDelVotanteController extends Controller
     {
         //
         $DatosDelVotante=DatosDelVotante::findOrfail($id);
-        $datosDelVotante->delete();
+        $DatosDelVotante->delete();
         Alert::warning('Votante Elimindado Correctamente');
         return redirect()->route('DatosDelVotante.index');
     }
