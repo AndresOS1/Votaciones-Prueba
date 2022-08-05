@@ -10,13 +10,18 @@
 
                             <div class="mb-md-5 mt-md-4 pb-5">
 
-                                <h2 class="fw-bold mb-2 text-uppercase">Puesto de votacion</h2>
+                                <h2 class="fw-bold mb-2 text-uppercase">Datos del Votante</h2>
                                 <form action="{{route('PuestosDeVotaciones.store')}}" method="POST">
                                     @csrf
                                     <div class="form-outline form-white mb-4 mt-5">
                                         <input type="text" id="text" class="form-control form-control-lg"
-                                            name="nombre" required />
-                                        <label class="form-label" for="typeEmailX">Nombre</label>
+                                            name="nombres" required />
+                                        <label class="form-label" for="typeEmailX">Nombres</label>
+                                    </div>
+                                    <div class="form-outline form-white mb-4 mt-5">
+                                        <input type="text" id="text" class="form-control form-control-lg"
+                                            name="apellidos" required />
+                                        <label class="form-label" for="typeEmailX">Nombres</label>
                                     </div>
 
 
@@ -28,16 +33,53 @@
                                     </div>
 
                                     <div class="form-outline form-white mb-4 mt-2">
-                                        <select  id="" class="form-select form-control-lg" name="municipio_id" required>
-                                            <option value="">Seleccione Municipio</option>
-                                            @foreach ($municipios as $municipio)
-                                                <option value="{{ $municipio->id_municipio }}">{{ $municipio->nombre }}</option>
-                                            @endforeach
-                                        </select>
-                                        <label class="form-label" for="typeEmailX">municipio</label>
+                                        <input type="text" id="" class="form-control form-control-lg"
+                                            name="telefono" required />
+                                        <label class="form-label" for="typeEmailX">Telefono</label>
+                                    </div>
+
+                                    <div class="form-outline form-white mb-4 mt-2">
+                                        <input type="text" id="" class="form-control form-control-lg"
+                                            name="cedula" required />
+                                        <label class="form-label" for="typeEmailX">Num Documento</label>
                                     </div>
 
 
+                                    <div class="form-outline form-white mb-4 mt-2">
+                                        <select  id="" class="form-select form-control-lg" name="user_id" required>
+                                            <option value="">Seleccione un Lider</option>
+                                            @foreach ($users as $user)
+                                                <option value="{{ $user->id}}">{{ $user->nombre }}</option>
+                                            @endforeach
+                                        </select>
+                                        <label class="form-label" for="typeEmailX">Lider</label>
+                                    </div>
+
+                                    <div class="form-outline form-white mb-4 mt-2">
+                                        <select  id="" class="form-select form-control-lg" name="barrio_id" required>
+                                            <option value="">Seleccione un Barrio</option>
+                                            @foreach ($barrios as $barrio)
+                                                <option value="{{ $barrio->id_barrio }}">{{ $barrio->nombre }}</option>
+                                            @endforeach
+                                        </select>
+                                        <label class="form-label" for="typeEmailX">Barrio</label>
+                                    </div>
+
+                                    <div class="form-outline form-white mb-4 mt-2">
+                                        <select  id="" class="form-select form-control-lg" name="puestos_de_votaciones_id" required>
+                                            <option value="">Seleccione un Puesto de votación</option>
+                                            @foreach ($PuestosDeVotaciones as $PuestoDeVotacion)
+                                                <option value="{{ $PuestoDeVotacion->id_puesto }}">{{ $PuestoDeVotacion->nombre }}</option>
+                                            @endforeach
+                                        </select>
+                                        <label class="form-label" for="typeEmailX">Puesto de votacion</label>
+                                    </div>
+
+                                    <div class="form-outline form-white mb-4 mt-2">
+                                        <input type="number" id="" class="form-control form-control-lg"
+                                            name="mesa" required />
+                                        <label class="form-label" for="typeEmailX"># Mesa</label>
+                                    </div>
 
                                     <div class="row justify-content-center">
                                         <div class="col-sm-8 mt-2 mb-4">

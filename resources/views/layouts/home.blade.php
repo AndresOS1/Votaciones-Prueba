@@ -77,13 +77,15 @@
 
                 <nav class="menu d-flex d-sm-block justify-content-end flex-wrap nav1">
                     <img class="imglogin" src="{{ asset(Auth()->user()->avatar) }}" />
-                    <h5 class="font-1 text1 active ">{{ Auth()->user()->userName}} </h5>
+                    <h5 class="font-1 text1 active ">{{ Auth()->user()->userName }} </h5>
 
 
-                <a class="nav-link d-flex justify-content-center " href="{{route('PuestosDeVotaciones.create')}}">Registrar Puesto</a>
-                <a class="nav-link d-flex justify-content-center " href="{{route('PuestosDeVotaciones.index')}}">Ver Puestos</a>
-                <a class="nav-link d-flex justify-content-center ">Opcion 3</a>
-                <a class="nav-link d-flex justify-content-center ">Opcion 4</a>
+                    <a class="nav-link d-flex justify-content-center "
+                        href="{{ route('PuestosDeVotaciones.create') }}">Registrar Puesto</a>
+                    <a class="nav-link d-flex justify-content-center "
+                        href="{{ route('PuestosDeVotaciones.index') }}">Ver Puestos</a>
+                    <a class="nav-link d-flex justify-content-center ">Opcion 3</a>
+                    <a class="nav-link d-flex justify-content-center ">Opcion 4</a>
                 </nav>
 
             </div>
@@ -121,7 +123,7 @@
         color: #FFFF;
     }
 
-    .nav1{
+    .nav1 {
         height: 100vh;
     }
 
@@ -179,12 +181,14 @@
     .imglogin {
 
 
-        /* float: left; */
-        width: 100px;
+        /* float: initial; */
         border-radius: 50%;
-        margin-top: 30px;
-        margin-left: 55px;
-        padding: 0;
+        width: 150px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+        display: block;
+
     }
 
     .barra-lateral {
@@ -192,6 +196,7 @@
         color: #fff;
         min-width: 250px;
         min-height: 100vh;
+        overflow-y: auto;
     }
 
     .barra-lateral a {

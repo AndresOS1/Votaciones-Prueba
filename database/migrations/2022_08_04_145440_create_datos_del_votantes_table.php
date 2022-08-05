@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('direccion');
             $table->string('telefono');
             $table->string('cedula');
+            $table->string('mesa');
+
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('barrio_id');
             $table->unsignedBigInteger('puestos_de_votaciones_id');
