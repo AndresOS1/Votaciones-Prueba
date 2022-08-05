@@ -53,12 +53,13 @@ class PuestosDeVotacionesController extends Controller
             $PuestosDeVotaciones->save();
             if($PuestosDeVotaciones){
                 Alert::success('Puesto de votaciones creado');
-                return redirec()->route('PuestosDeVotaciones.index');
+                return redirect()->route('PuestosDeVotaciones.index');
             }else{
                 Alert::error('algo a malido sal');
                 return redirect()->route('PuestosDeVotaciones.create');
             }
         }else{
+            // dd($validation);
             Alert::error('falta un campo');
             return redirect()->route('PuestosDeVotaciones.create');
         }

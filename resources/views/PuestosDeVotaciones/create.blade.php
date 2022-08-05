@@ -11,7 +11,7 @@
                             <div class="mb-md-5 mt-md-4 pb-5">
 
                                 <h2 class="fw-bold mb-2 text-uppercase">Puesto de votacion</h2>
-                                <form action="{{}}" method="POST" enctype="multipart/form-data">
+                                <form action="{{route('PuestosDeVotaciones.store')}}" method="POST">
                                     @csrf
                                     <div class="form-outline form-white mb-4 mt-5">
                                         <input type="text" id="text" class="form-control form-control-lg"
@@ -28,9 +28,11 @@
                                     </div>
 
                                     <div class="form-outline form-white mb-4 mt-2">
-                                        <select name="" id="" class="form-select form-control-lg" name="municipio_id">
-                                            <option value="" selected class="">selecciona el municipio</option>
-                                            
+                                        <select  id="" class="form-select form-control-lg" name="municipio_id" required>
+                                            <option value="">Seleccione Municipio</option>
+                                            @foreach ($municipios as $municipio)
+                                                <option value="{{ $municipio->id_municipio }}">{{ $municipio->nombre }}</option>
+                                            @endforeach
                                         </select>
                                         <label class="form-label" for="typeEmailX">municipio</label>
                                     </div>
