@@ -55,6 +55,7 @@ class DatosDelVotanteController extends Controller
                      'direccion'=>'required',
                      'telefono'=>'required',
                      'cedula'=>'required',
+                     'mesa'=>'required',
                      'user_id'=>'required',
                      'barrio_id'=>'required',
                      'puestos_de_votacion_id'=>'required',
@@ -66,6 +67,7 @@ class DatosDelVotanteController extends Controller
             $PuestosDeVotaciones->direccion=$request->direccion;
             $PuestosDeVotaciones->telefono=$request->telefono;
             $PuestosDeVotaciones->cedula=$request->cedula;
+            $PuestosDeVotaciones->mesa=$request->mesa;
             $PuestosDeVotaciones->user_id=$request->user_id;
             $PuestosDeVotaciones->barrio_id=$request->barrio_id;
             $PuestosDeVotaciones->puestos_de_votacion_id=$request->puestos_de_votacion_id;
@@ -129,6 +131,7 @@ class DatosDelVotanteController extends Controller
                      'direccion'=>'required',
                      'telefono'=>'required',
                      'cedula'=>'required',
+                     'mesa'=>'required',
                      'user_id'=>'required',
                      'barrio_id'=>'required',
                      'puestos_de_votacion_id'=>'required',
@@ -140,6 +143,7 @@ class DatosDelVotanteController extends Controller
             $PuestosDeVotaciones->direccion=$request->direccion;
             $PuestosDeVotaciones->telefono=$request->telefono;
             $PuestosDeVotaciones->cedula=$request->cedula;
+            $PuestosDeVotaciones->mesa=$request->mesa;
             $PuestosDeVotaciones->user_id=$request->user_id;
             $PuestosDeVotaciones->barrio_id=$request->barrio_id;
             $PuestosDeVotaciones->puestos_de_votacion_id=$request->puestos_de_votacion_id;
