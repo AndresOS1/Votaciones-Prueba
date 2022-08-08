@@ -2,7 +2,7 @@
 @section('content')
     @include('sweetalert::alert')
 
-    <div class="container">
+    <div class="container index-body">
         <div class="row">
             <div class="col mt-5">
                 <h1 class="text-center">Puestos de Votaciones</h1>

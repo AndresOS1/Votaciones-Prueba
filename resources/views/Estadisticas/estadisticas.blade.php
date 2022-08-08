@@ -1,4 +1,4 @@
-@extends('layouts.home')
+@extends('layouts.dashboard')
 @section('content')
     <div class="container">
         <div class="row">
@@ -68,7 +68,7 @@
         </div>
     </div>
     <h1 class="text-center mt-5">Votantes inscritos por Lider</h1>
-    <div class="chart-container" style="display: flex; margin: auto; margin-top: 30px;  padding: 90px; height:40vh; width:60vw">
+    <div class="chart-container "style="padding:200px; ">
         <canvas id="myChart"></canvas>
     </div>
 
@@ -78,47 +78,49 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.2/chart.min.js"></script>
 
 
-
+<div class="container d-flex h-50">
     <script>
         
-            const cData = JSON.parse(`<?php echo $data; ?>`);
-            console.log(cData);
+        const cData = JSON.parse(`<?php echo $data; ?>`);
+        console.log(cData);
 
-            const ctx = document.getElementById('myChart').getContext('2d');
-            const myChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels:cData.label,
-                    datasets: [{
-                        label: '#VotantesRegistrados',
-                        data: cData.data,
-                        backgroundColor: [
-                            'rgba(255, 99, 132)',
-                            'rgba(54, 162, 235)',
-                            'rgba(255, 206, 86)',
-                            'rgba(75, 192, 192)',
-                            'rgba(153, 102, 255)',
-                            'rgba(255, 159, 64)'
-                        ],
-                        borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                        }
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels:cData.label,
+                datasets: [{
+                    label: '#VotantesRegistrados',
+                    data: cData.data,
+                    backgroundColor: [
+                        'rgba(255, 99, 132)',
+                        'rgba(54, 162, 235)',
+                        'rgba(255, 206, 86)',
+                        'rgba(75, 192, 192)',
+                        'rgba(153, 102, 255)',
+                        'rgba(255, 159, 64)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
                     }
                 }
-            });
-      
-    </script>
+            }
+        });
+  
+</script>
+</div>
+ 
 @endsection

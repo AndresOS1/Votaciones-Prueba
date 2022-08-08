@@ -1,4 +1,4 @@
-@extends('layouts.home')
+@extends('layouts.dashboard')
 @section('content')
     @include('sweetalert::alert')
     <section class="vh-100 gradient-custom">

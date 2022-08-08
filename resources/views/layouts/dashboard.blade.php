@@ -50,7 +50,7 @@
                     <div class="">
                         <p class="fs-4 text-white">circle</p>
                     </div>
-                </li>
+                </li>    
             </ul> 
             <div class="w-25 d-flex justify-content-end icon pb-4">
                 <a class="icon fs-1 bi bi-door-closed-fill  d-flex justify-content-end text-decoration-none" href="{{ route('cerrarSesion') }}"></a> 
@@ -70,13 +70,13 @@
                <li id="" class="w-100 d-flex lista justify-content-center flex-wrap"> 
                 <a type="button" class="btn d-inline-block  ml-auto w-100 fs-4 text-white" data-toggle="collapse"
                 data-target="#list1" aria-expanded="false" aria-label="Togglenavigation">
-                abrir lista 1</a>
+                puestos de votaciones</a>
                     <ul class="collapse w-100 ul  flex-wrap p-0" id="list1">
                         <li class="d-flex justify-content-center ">
-                                <a class="fs-4 text-white nav-link w-100 d-flex justify-content-center" href="#"> home</a>
+                                <a class="fs-4 text-white nav-link w-100 d-flex justify-content-center" href="{{ route('PuestosDeVotaciones.index') }}">Ver puestos</a>
                         </li>
                         <li class="d-flex justify-content-center w-100">
-                            <a class="fs-4 text-white nav-link  w-100 d-flex justify-content-center" href="#">home1</a>
+                            <a class="fs-4 text-white nav-link  w-100 d-flex justify-content-center" href="{{ route('PuestosDeVotaciones.create') }}">Registrar puesto</a>
                         </li>                
                     </ul>
                 </li>
@@ -84,23 +84,25 @@
                 <li id="" class="w-100 lista   d-flex justify-content-center flex-wrap"> 
                     <a type="button" class="btn  d-inline-block  ml-auto w-100 fs-4 text-white" data-toggle="collapse"
                     data-target="#list2" aria-expanded="false" aria-label="Togglenavigation">
-                    abrir lista 2</a>
+                    Datos del votante</a>
                         <ul class="collapse ul w-100 flex-wrap p-0" id="list2">
                             <li class="d-flex justify-content-center w-100">
-                                <a class="fs-4 text-white nav-link  w-100 d-flex justify-content-center" href="#">home</a>
+                                <a class="fs-4 text-white nav-link  w-100 d-flex justify-content-center" href="{{route('DatosDelVotante.index')}}">Ver datos del votante</a>
                             </li>
                             <li class="d-flex justify-content-center w-100">
-                                <a class="fs-4 text-white nav-link  w-100 d-flex justify-content-center" href="#">home1</a>
+                                <a class="fs-4 text-white nav-link  w-100 d-flex justify-content-center" href="{{route('DatosDelVotante.create')}}">registrar votante</a>
                             </li>                
                         </ul>
                     </li>
                     <div class="w-100 d-flex justify-content-center lista">
-                        <a href="#" type="button" class="btn  w-100 fs-4 text-white text-decoration-none">opcion 3</a>
+                        <a href="{{route('estadisticas')}}" type="button" class="btn  w-100 fs-4 text-white text-decoration-none">estadisticas</a>
                     </div>
             </ul>
         </nav> 
-        <section class=" body card mh-100 d-flex mx-auto mt-2 shadow-lg" >
-                    @yield('content')
+        <section class="body card d-flex mx-auto mt-2 shadow-lg" >
+            <div class="card-body d-flex flex-column flex-row">
+                @yield('content')
+            </div>
         </section>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
