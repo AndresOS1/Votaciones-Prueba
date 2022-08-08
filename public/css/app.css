@@ -1,0 +1,46 @@
+#wrapper{
+    background-color: grey;
+    width: 100%;
+  }
+.body{
+    width: 80%;
+}
+  nav .boton{
+      background-color: #DC5716;
+      color: aliceblue;
+      border: 1px;
+      border-radius: 10px;
+      padding: 10px;
+      margin-left: 20px;
+      box-shadow: 5px 10px 8px rgb(47, 47, 47);
+  }
+  #imgUser{
+    width: 200px;
+    height: 200px;
+  
+  }
+  #siderbar{
+      width: 17%;
+      height: 100vh;
+      background-color: grey;
+  }
+  #siderbar.active{
+      background-color: rgb(244, 9, 9);
+      margin-left: -700px;
+  }
+  .lista a:hover{
+      background-color: #254240;
+  }
+  .ul{
+      background-color: #437176;
+  }
+  .ul li a:hover{
+      background-color: #69A6A4;
+  }
+  .icon:hover{
+      color: #DC5716;
+  }
+  
+  .icon{
+      color: aliceblue;
+  }

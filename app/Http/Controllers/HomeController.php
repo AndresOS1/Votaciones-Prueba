@@ -12,7 +12,7 @@ class HomeController extends Controller
 
         if(Auth::user()){
             $user=Auth()->user();
-             return view('layouts.home', compact('user'));
+             return view('layouts.dashboard', compact('user'));
            } 
            else{
             return redirect()->route('verLogin');

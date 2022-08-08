@@ -18,7 +18,7 @@ class PuestosDeVotacionesController extends Controller
     {
         //
         $PuestosDeVotaciones=PuestosDeVotaciones::simplePaginate();
-        $municipios=Municipio::all();
+        $municipios=Municipio::all(); 
         return view ('PuestosDeVotaciones.index', compact('PuestosDeVotaciones', 'municipios') );
     }
 

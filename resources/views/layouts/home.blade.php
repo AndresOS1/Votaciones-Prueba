@@ -59,7 +59,7 @@
             <div class="col-12 barra d-flex justify-content-between">
                 <h4 class="text-light ms-5">Bienvenido</h4>
 
-                <div>
+                <div> 
 
                     <a href="{{ route('cerrarSesion') }}" class="miss">Cerrar Sesion</a>
 
