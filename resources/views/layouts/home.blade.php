@@ -88,6 +88,8 @@
                     href="{{route('DatosDelVotante.create')}}">Registrar Votante</a>
                     <a class="nav-link d-flex justify-content-center"
                     href="{{route('DatosDelVotante.index')}}">Votantes</a>
+                    <a class="nav-link d-flex justify-content-center"
+                    href="{{route('estadisticas')}}">Estadisticas</a>
                 </nav>
             </div>
 
@@ -109,6 +111,8 @@
     <script src="js/bootstrap.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+        
+    
     </script>
 </body>
 
@@ -160,7 +164,13 @@
 
     .btn1 {
         background-color: #DC5716;
-        color: #FFFF
+        color: #FFFF;
+        margin-left: 16px;
+    }
+    .btn1:hover {
+        background-color: black;
+        color: #FFFF;
+       
     }
 
     .t {
@@ -196,8 +206,8 @@
         background-color: #437176;
         color: #fff;
         min-width: 250px;
-        min-height: 150vh;
-        overflow-y: auto;
+        min-height: 190vh;
+        
     }
 
     .barra-lateral a {

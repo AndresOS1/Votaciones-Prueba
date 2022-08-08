@@ -11,16 +11,17 @@
                             <div class="mb-md-5 mt-md-4 pb-5">
 
                                 <h2 class="fw-bold mb-2 text-uppercase">Datos del Votante</h2>
-                                <form action="{{route('DatosDelVotante.update', $DatosDelVotantes-> id_votante)}}" method="POST">
+                                <form action="{{route('DatosDelVotante.uptate', $DatosDelVotantes-> id_votante)}}" method="POST">
+                                    @method('PUT')
                                     @csrf
                                     <div class="form-outline form-white mb-4 mt-2">
                                         <input type="text" id="text" class="form-control form-control-lg"
-                                            name="nombres" value="{{$DatosDelVotante->nombres}}" required />
+                                            name="nombres" value="{{$DatosDelVotantes->nombres}}" required />
                                         <label class="form-label" for="typeEmailX">Nombres</label>
                                     </div>
                                     <div class="form-outline form-white mb-4 mt-2">
                                         <input type="text" id="text" class="form-control form-control-lg"
-                                            name="apellidos" value="{{$DatosDelVotante->apellidos}}" required />
+                                            name="apellidos" value="{{$DatosDelVotantes->apellidos}}" required />
                                         <label class="form-label" for="typeEmailX">Apellidos</label>
                                     </div>
 
@@ -28,19 +29,19 @@
 
                                     <div class="form-outline form-white mb-4 mt-2">
                                         <input type="text" id="" class="form-control form-control-lg"
-                                            name="direccion" value="{{$DatosDelVotante->direccion}}" required />
+                                            name="direccion" value="{{$DatosDelVotantes->direccion}}" required />
                                         <label class="form-label" for="typeEmailX">Direccion</label>
                                     </div>
 
                                     <div class="form-outline form-white mb-4 mt-2">
                                         <input type="number" id="" class="form-control form-control-lg"
-                                            name="telefono" value="{{$DatosDelVotante->telefono}}" required />
+                                            name="telefono" value="{{$DatosDelVotantes->telefono}}" required />
                                         <label class="form-label" for="typeEmailX">Telefono</label>
                                     </div>
 
                                     <div class="form-outline form-white mb-4 mt-2">
                                         <input type="number" id="" class="form-control form-control-lg"
-                                            name="cedula" value="{{$DatosDelVotante->cedula}}" required />
+                                            name="cedula" value="{{$DatosDelVotantes->cedula}}" required />
                                         <label class="form-label" for="typeEmailX">Num Documento</label>
                                     </div>
 
@@ -68,7 +69,7 @@
                                     </div>
 
                                     <div class="form-outline form-white mb-4 mt-2">
-                                        <select  id="" class="form-select form-control-lg" name="puestos_de_votacion_id" required>
+                                        <select  id="" class="form-select form-control-lg" name="puestos_de_votaciones_id" required>
                                             <option value="">Seleccione un Puesto de votación</option>
                                             @foreach ($PuestosDeVotaciones as $PuestoDeVotacion)
                                                 <option value="{{ $PuestoDeVotacion->id_puesto }}">{{ $PuestoDeVotacion->nombre }}</option>
@@ -79,14 +80,14 @@
 
                                     <div class="form-outline form-white mb-4 mt-2">
                                         <input type="number" id="" class="form-control form-control-lg"
-                                            name="mesa" value="{{$DatosDelVotante->mesa}}" required />
+                                            name="mesa" value="{{$DatosDelVotantes->mesa}}" required />
                                         <label class="form-label" for="typeEmailX"># Mesa</label>
                                     </div>
 
                                     <div class="row justify-content-center">
                                         <div class="col-sm-8 mt-2 mb-4">
                                             <button type="submit" name="button"
-                                                class="btn btn1  w-100">Registrar</button>
+                                                class="btn btn1  w-100">Actualizar</button>
                                         </div>
                                     </div>
 

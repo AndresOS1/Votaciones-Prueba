@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PuestosDeVotacionesController;
 use App\Http\Controllers\DatosDelVotanteController;
+use App\Http\Controllers\EstadisticaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,3 +49,10 @@ Route::post('/DatosDelVotante.store',[DatosDelVotanteController::class,'store'])
 Route::get('/editarvotante/{id}',[DatosDelVotanteController::class,'edit'])->name('editarvotante');
 Route::put('/actualizarvotante/{id}',[DatosDelVotanteController::class,'update'])->name('DatosDelVotante.uptate');
 Route::delete('/eliminarvotante/{id}',[DatosDelVotanteController::class,'destroy'])->name('eliminarvotante');
+
+
+Route::get('/estadisticas',[EstadisticaController::class,'estadisticas'])->name('estadisticas');
+
+Route::get('/verestadisticas',[EstadisticaController::class,'verPDF'])->name('verestadisticas');
+Route::get('/descargarestadisticas',[EstadisticaController::class,'descargarPDF'])->name('descargarestadisticas');
+

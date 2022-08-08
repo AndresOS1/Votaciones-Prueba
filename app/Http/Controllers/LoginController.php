@@ -32,26 +32,26 @@ class LoginController extends Controller
             if(Auth::attempt($credenciales)){
                     //    return redirect()->route();
 
-                    Alert::success('inicio de sesion correcto');
+                    Alert::success('Iniciaste Sesión Correctamente');
                     return redirect()->route('home', compact('user'));
             }else{
 
                     return  redirect()->route('verLogin');
             }
             } else{
-                Alert::error('inicio de sesion incorrecto');
+                Alert::error('Inicio de Sesión Incorrecto');
                 return redirect()->route('verLogin');
                }
           }
            else{
-              Alert::error('inicio de sesion incorrecto');
+              Alert::error('Inicio de Sesión Incorrecto');
               return redirect()->route('verLogin');
             }  
     }
 
     public function logout(){
           Auth::logout();
-          Alert::warning('Cierre de session satisfactorio');
+          Alert::warning('Cierre de Sesión Satisfactorio');
           return redirect()->route('verLogin');
     }
 

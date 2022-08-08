@@ -68,7 +68,7 @@
                                     </div>
 
                                     <div class="form-outline form-white mb-4 mt-2">
-                                        <select  id="" class="form-select form-control-lg" name="puestos_de_votacion_id" required>
+                                        <select  id="" class="form-select form-control-lg" name="puestos_de_votaciones_id" required>
                                             <option value="">Seleccione un Puesto de votación</option>
                                             @foreach ($PuestosDeVotaciones as $PuestoDeVotacion)
                                                 <option value="{{ $PuestoDeVotacion->id_puesto }}">{{ $PuestoDeVotacion->nombre }}</option>

@@ -43,7 +43,7 @@
                                     <div class="row justify-content-center">
                                         <div class="col-sm-8 mt-2 mb-4">
                                             <button type="submit" name="button"
-                                                class="btn btn1  w-100">Registrar</button>
+                                                class="btn btn1  w-100">Actualizar</button>
                                         </div>
                                     </div>
 
