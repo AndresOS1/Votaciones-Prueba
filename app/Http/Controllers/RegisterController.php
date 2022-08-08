@@ -45,15 +45,15 @@ class RegisterController extends Controller
                         $user->tipoUsuario=$request->tipoUsuario;
                         $user->password=Hash::make($request->password);
                         $user->save();
-                        Alert::success('ingreso satisfactoriamente');
+                        Alert::success('Registro Exitoso');
                         return redirect()->route('verLogin');
                     }
                 }else{
-                    Alert::error('falta un campo');
+                    Alert::error('Falta un campo');
                     return view('Auth.Register');
                 }
             }else{
-                Alert::error('el nombre de usuario ya existe');
+                Alert::error('El nombre de usuario ya existe');
                 return view('Auth.Register');
             }
     }

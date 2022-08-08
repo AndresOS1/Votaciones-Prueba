@@ -56,12 +56,12 @@ class PuestosDeVotacionesController extends Controller
                 Alert::success('Puesto de votaciones creado');
                 return redirect()->route('PuestosDeVotaciones.index');
             }else{
-                Alert::error('algo a malido sal');
+                Alert::error('Algo a salido mal');
                 return redirect()->route('PuestosDeVotaciones.create');
             }
         }else{
             // dd($validation);
-            Alert::error('falta un campo');
+            Alert::error('Falta un campo');
             return redirect()->route('PuestosDeVotaciones.create');
         }
         
@@ -114,14 +114,14 @@ class PuestosDeVotacionesController extends Controller
             $PuestosDeVotaciones->municipio_id=$request->municipio_id;
             $PuestosDeVotaciones->save();
             if($PuestosDeVotaciones){
-                Alert::success('Puesto de votaciones editado');
+                Alert::success('Puesto de Votaciones Actualizado Correctamente');
                 return redirect()->route('PuestosDeVotaciones.index');
             }else{
-                Alert::error('algo a malido sal');
+                Alert::error('Algo a salido mal');
                 return redirect()->route('PuestosDeVotaciones.edit');
             }
         }else{
-            Alert::error('falta un campo');
+            Alert::error('Falta un campo');
             return redirect()->route('PuestosDeVotaciones.edit');
         }
     }

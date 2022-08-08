@@ -61,7 +61,7 @@ class DatosDelVotanteController extends Controller
                      'mesa'=>'required',
                      'user_id'=>'required',
                      'barrio_id'=>'required',
-                     'puestos_de_votacion_id'=>'required',
+                     'puestos_de_votaciones_id'=>'required',
          ]);
         if(!$validation->fails()){
             $DatosDelVotante=new DatosDelVotante();
@@ -73,18 +73,18 @@ class DatosDelVotanteController extends Controller
             $DatosDelVotante->mesa=$request->mesa;
             $DatosDelVotante->user_id=$request->user_id;
             $DatosDelVotante->barrio_id=$request->barrio_id;
-            $DatosDelVotante->puestos_de_votaciones_id=$request->puestos_de_votacion_id;
+            $DatosDelVotante->puestos_de_votaciones_id=$request->puestos_de_votaciones_id;
             $DatosDelVotante->save();
             if($DatosDelVotante){
-                Alert::success('daros del votante creado exitosamente');
+                Alert::success('Votante Inscrito Correctamente');
                 return redirect()->route('DatosDelVotante.index');
             }else{
-                Alert::error('algo a malido sal');
+                Alert::error('Algo a salido mal');
                 return redirect()->route('DatosDelVotante.create');
             }
         }else{
             // dd($validation);
-            Alert::error('falta un campo');
+            Alert::error('Falta un campo');
             // dd($PuestosDeVotaciones);
             return redirect()->route('DatosDelVotante.create');
         }
@@ -140,7 +140,7 @@ class DatosDelVotanteController extends Controller
                      'mesa'=>'required',
                      'user_id'=>'required',
                      'barrio_id'=>'required',
-                     'puestos_de_votacion_id'=>'required',
+                     'puestos_de_votaciones_id'=>'required',
          ]);
         if(!$validation->fails()){
             $DatosDelVotante=DatosDelVotante::find($id);
@@ -152,19 +152,19 @@ class DatosDelVotanteController extends Controller
             $DatosDelVotante->mesa=$request->mesa;
             $DatosDelVotante->user_id=$request->user_id;
             $DatosDelVotante->barrio_id=$request->barrio_id;
-            $DatosDelVotante->puestos_de_votacion_id=$request->puestos_de_votacion_id;
+            $DatosDelVotante->puestos_de_votaciones_id=$request->puestos_de_votaciones_id;
             $DatosDelVotante->save();
             if($DatosDelVotante){
-                Alert::success('daros del votante creado exitosamente');
+                Alert::success('Votante Actualizado Correctamente');
                 return redirect()->route('DatosDelVotante.index');
             }else{
-                Alert::error('algo a malido sal');
-                return redirect()->route('DatosDelVotante.create');
+                Alert::error('Algo a salido mal');
+                return redirect()->route('DatosDelVotante.index');
             }
         }else{
             // dd($validation);
-            Alert::error('falta un campo');
-            return redirect()->route('DatosDelVotante.create');
+            Alert::error('Falta un campo');
+            return redirect()->route('DatosDelVotante.index');
         }
     }
 
