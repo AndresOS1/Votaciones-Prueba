@@ -129,7 +129,7 @@
   }
   #siderbar{
       width: 17%;
-      height: 100vh;
+      height: 160vh;
       background-color: grey;
   }
   #siderbar.active{

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>D</title>
+    <title></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
@@ -67,10 +67,10 @@
                 </div>       
             </div>
             <ul class="list list-unstyled justify-content-center d-flex flex-wrap">
-               <li id="" class="w-100 d-flex lista justify-content-center flex-wrap"> 
+               <li id="" class="w-100 d-flex lista justify-content-center mt-5 flex-wrap"> 
                 <a type="button" class="btn d-inline-block  ml-auto w-100 fs-4 text-white" data-toggle="collapse"
                 data-target="#list1" aria-expanded="false" aria-label="Togglenavigation">
-                puestos de votaciones</a>
+                Puestos de votaciones</a>
                     <ul class="collapse w-100 ul  flex-wrap p-0" id="list1">
                         <li class="d-flex justify-content-center ">
                                 <a class="fs-4 text-white nav-link w-100 d-flex justify-content-center" href="{{ route('PuestosDeVotaciones.index') }}">Ver puestos</a>
@@ -81,21 +81,21 @@
                     </ul>
                 </li>
                 <a href=""></a>
-                <li id="" class="w-100 lista   d-flex justify-content-center flex-wrap"> 
+                <li id="" class="w-100 lista  mt-5 d-flex justify-content-center flex-wrap"> 
                     <a type="button" class="btn  d-inline-block  ml-auto w-100 fs-4 text-white" data-toggle="collapse"
                     data-target="#list2" aria-expanded="false" aria-label="Togglenavigation">
                     Datos del votante</a>
                         <ul class="collapse ul w-100 flex-wrap p-0" id="list2">
                             <li class="d-flex justify-content-center w-100">
-                                <a class="fs-4 text-white nav-link  w-100 d-flex justify-content-center" href="{{route('DatosDelVotante.index')}}">Ver datos del votante</a>
+                                <a class="fs-4 text-white nav-link  w-100 d-flex justify-content-center" href="{{route('DatosDelVotante.index')}}">Ver datos de los votantes</a>
                             </li>
                             <li class="d-flex justify-content-center w-100">
                                 <a class="fs-4 text-white nav-link  w-100 d-flex justify-content-center" href="{{route('DatosDelVotante.create')}}">registrar votante</a>
                             </li>                
                         </ul>
                     </li>
-                    <div class="w-100 d-flex justify-content-center lista">
-                        <a href="{{route('estadisticas')}}" type="button" class="btn  w-100 fs-4 text-white text-decoration-none">estadisticas</a>
+                    <div class="w-100 d-flex mt-5 justify-content-center lista">
+                        <a href="{{route('estadisticas')}}" type="button" class="btn  w-100 fs-4 text-white text-decoration-none">Estadisticas</a>
                     </div>
             </ul>
         </nav> 
