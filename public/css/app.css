@@ -33,6 +33,7 @@ div .index-body{
   }
   #siderbar{
       width: 17%;
+      height: 160vh;
       background-color: grey;
   }
   #siderbar.active{
