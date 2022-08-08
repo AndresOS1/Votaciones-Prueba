@@ -1,11 +1,12 @@
 @extends('layouts.dashboard')
 @section('content')
-    <div class="container">
+<div class="container"style="height: 150vh;">
+    <div class="container" >
         <div class="row">
             <div class="col-12 mt-5">
                 
                 <h1 class="text-center">Estadisticas</h1>
-                <table class="table mt-5">
+                <table cellspacing="0"class="table table-bordered table-responsive display compact no-wrap mt-2">
                     <div class="col-12 d-flex justify-content-end">
                         <a href="{{route('verestadisticas')}}"><button class="btn btn-primary btn1 ">Ver PDF</button> </a>
                         <a href="{{route('descargarestadisticas')}}"><button class="btn btn-primary btn1 ">Descargar PDF</button> </a>
@@ -67,8 +68,8 @@
             </div>
         </div>
     </div>
-    <h1 class="text-center mt-5">Votantes inscritos por Lider</h1>
-    <div class="chart-container "style="padding:200px; ">
+    <h1 class="text-center mt-2">Votantes inscritos por Lider</h1>
+    <div class="chart-container barras"style="">
         <canvas id="myChart"></canvas>
     </div>
 
@@ -122,5 +123,5 @@
   
 </script>
 </div>
- 
+</div>
 @endsection
