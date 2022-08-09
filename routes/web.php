@@ -7,11 +7,11 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PuestosDeVotacionesController;
 use App\Http\Controllers\DatosDelVotanteController;
 use App\Http\Controllers\EstadisticaController;
-<<<<<<< HEAD
+
 use App\Http\Controllers\pdfController;
-=======
+
 use App\Http\Controllers\ReportesController;
->>>>>>> 961fb69d670286e4581f601a008a02390f2e24d9
+
 
 /*
 |--------------------------------------------------------------------------
@@ -61,14 +61,14 @@ Route::get('/estadisticas',[EstadisticaController::class,'estadisticas'])->name(
 Route::get('/verestadisticas',[EstadisticaController::class,'verPDF'])->name('verestadisticas');
 Route::get('/descargarestadisticas',[EstadisticaController::class,'descargarPDF'])->name('descargarestadisticas');
 
-<<<<<<< HEAD
+
 Route::get('pdf',[pdfController::class,'reporte']);
-=======
+
 
 Route::get('/jasper',[ReportesController::class,'reporte'])->name('jasper');
 
 
 
 
->>>>>>> 961fb69d670286e4581f601a008a02390f2e24d9
+
 
