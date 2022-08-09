@@ -67,19 +67,12 @@
                     <img id="imgUser" src="{{ asset(Auth()->user()->avatar) }}" class="img-fluid rounded-circle shadow-lg sm-4" alt="">
                 </div>       
             </div>
-<<<<<<< HEAD
             <ul class="list list-unstyled justify-content-start d-flex flex-wrap">
                <li id="" class="d-flex lista justify-content-center flex-wrap"> 
                 <a type="button" class="btn d-inline-block justify-content-start  ml-auto w-100 fs-4 text-white bi bi-mailbox2" data-toggle="collapse"
                 data-target="#list1" aria-expanded="false" aria-label="Togglenavigation">
                  puestos de votaciones</a>
-=======
-            <ul class="list list-unstyled justify-content-center d-flex flex-wrap">
-               <li id="" class="w-100 d-flex lista justify-content-center mt-5 flex-wrap"> 
-                <a type="button" class="btn d-inline-block  ml-auto w-100 fs-4 text-white" data-toggle="collapse"
-                data-target="#list1" aria-expanded="false" aria-label="Togglenavigation">
-                Puestos de votaciones</a>
->>>>>>> db90bb5174ea7a36562cadbc37e4c65d0e83acd8
+
                     <ul class="collapse w-100 ul  flex-wrap p-0" id="list1">
                         <li class="d-flex justify-content-center ">
                                 <a class="fs-4 text-white nav-link w-100 d-flex justify-content-center" href="{{ route('PuestosDeVotaciones.index') }}">Ver puestos</a>
@@ -90,13 +83,8 @@
                     </ul>
                 </li>
                 <a href=""></a>
-<<<<<<< HEAD
-                <li id="" class=" lista   d-flex justify-content-center flex-wrap"> 
+                <li id="" class="lista   d-flex justify-content-center flex-wrap"> 
                     <a type="button" class="btn  d-inline-block  ml-auto w-100 fs-4 text-white bi bi-clipboard2-data-fill" data-toggle="collapse"
-=======
-                <li id="" class="w-100 lista  mt-5 d-flex justify-content-center flex-wrap"> 
-                    <a type="button" class="btn  d-inline-block  ml-auto w-100 fs-4 text-white" data-toggle="collapse"
->>>>>>> db90bb5174ea7a36562cadbc37e4c65d0e83acd8
                     data-target="#list2" aria-expanded="false" aria-label="Togglenavigation">
                     Datos del votante</a>
                         <ul class="collapse ul w-100 flex-wrap p-0" id="list2">
@@ -108,13 +96,8 @@
                             </li>                
                         </ul>
                     </li>
-<<<<<<< HEAD
                     <div class=" d-flex justify-content-center lista">
                         <a href="{{route('estadisticas')}}" type="button" class="btn  w-100 fs-4 text-white text-decoration-none bi bi-bar-chart-fill"> estadisticas</a>
-=======
-                    <div class="w-100 d-flex mt-5 justify-content-center lista">
-                        <a href="{{route('estadisticas')}}" type="button" class="btn  w-100 fs-4 text-white text-decoration-none">Estadisticas</a>
->>>>>>> db90bb5174ea7a36562cadbc37e4c65d0e83acd8
                     </div>
             </ul>
         </nav> 

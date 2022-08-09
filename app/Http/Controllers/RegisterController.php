@@ -49,7 +49,7 @@ class RegisterController extends Controller
                         return redirect()->route('verLogin');
                     }
                 }else{
-                    Alert::error('Falta un campo');
+                    Alertu::error('Falta un campo');
                     return view('Auth.Register');
                 }
             }else{
