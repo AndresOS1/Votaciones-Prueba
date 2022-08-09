@@ -12,18 +12,19 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <script src="{{asset('js/app.js')}}" type="text/javascript"></script>
  </head>
   <body>
     @include('sweetalert::alert')
     <section class="" id="wrapper">
-      <nav class="navbar navbar-expand-sm p-2">
+      <nav class="navbar navbar-expand-lg p-2">
         <button type="button" class="boton " id="buttonsiderbar">
           <span class="bi-archive fs-3 m-1"></span>
         </button>
-        <button type="button" class="btn d-inline-block d-sm-none ml-auto" data-toggle="collapse"
+        <button type="button" class="btn d-inline-block d-md-none ml-auto" data-toggle="collapse"
         data-target="#navbarSupportedContent" aria-expanded="false" aria-label="Togglenavigation">
-            <span class="navbar-toggler-icon" aria-controls="navbarSupportedContent"></span>
+            <span class=" bi-sign-turn-left-fill text-white fs-4" aria-controls="navbarSupportedContent"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-center pt-4" id="navbarSupportedContent">
             <ul class="nav navbar-nav navbar-center px-5 ml-auto w-50 d-flex justify-content-lg-end gap-5">
@@ -59,18 +60,26 @@
       </nav>
     </section>
     <section class="d-flex flex-row" id="content">
-        <nav id="siderbar" class="p-2 col-sm-12 d-flex flex-column">
+        <nav id="siderbar" class="p-2 d-flex flex-column">
             <div class="siderbar-header mb-4">
                 <div class="d-flex justify-content-center w-100"><p class="fs-2 text-white">{{ Auth()->user()->userName }} </p></div> 
                 <div class="d-flex justify-content-center w-100">
                     <img id="imgUser" src="{{ asset(Auth()->user()->avatar) }}" class="img-fluid rounded-circle shadow-lg sm-4" alt="">
                 </div>       
             </div>
+<<<<<<< HEAD
+            <ul class="list list-unstyled justify-content-start d-flex flex-wrap">
+               <li id="" class="d-flex lista justify-content-center flex-wrap"> 
+                <a type="button" class="btn d-inline-block justify-content-start  ml-auto w-100 fs-4 text-white bi bi-mailbox2" data-toggle="collapse"
+                data-target="#list1" aria-expanded="false" aria-label="Togglenavigation">
+                 puestos de votaciones</a>
+=======
             <ul class="list list-unstyled justify-content-center d-flex flex-wrap">
                <li id="" class="w-100 d-flex lista justify-content-center mt-5 flex-wrap"> 
                 <a type="button" class="btn d-inline-block  ml-auto w-100 fs-4 text-white" data-toggle="collapse"
                 data-target="#list1" aria-expanded="false" aria-label="Togglenavigation">
                 Puestos de votaciones</a>
+>>>>>>> db90bb5174ea7a36562cadbc37e4c65d0e83acd8
                     <ul class="collapse w-100 ul  flex-wrap p-0" id="list1">
                         <li class="d-flex justify-content-center ">
                                 <a class="fs-4 text-white nav-link w-100 d-flex justify-content-center" href="{{ route('PuestosDeVotaciones.index') }}">Ver puestos</a>
@@ -81,8 +90,13 @@
                     </ul>
                 </li>
                 <a href=""></a>
+<<<<<<< HEAD
+                <li id="" class=" lista   d-flex justify-content-center flex-wrap"> 
+                    <a type="button" class="btn  d-inline-block  ml-auto w-100 fs-4 text-white bi bi-clipboard2-data-fill" data-toggle="collapse"
+=======
                 <li id="" class="w-100 lista  mt-5 d-flex justify-content-center flex-wrap"> 
                     <a type="button" class="btn  d-inline-block  ml-auto w-100 fs-4 text-white" data-toggle="collapse"
+>>>>>>> db90bb5174ea7a36562cadbc37e4c65d0e83acd8
                     data-target="#list2" aria-expanded="false" aria-label="Togglenavigation">
                     Datos del votante</a>
                         <ul class="collapse ul w-100 flex-wrap p-0" id="list2">
@@ -94,8 +108,13 @@
                             </li>                
                         </ul>
                     </li>
+<<<<<<< HEAD
+                    <div class=" d-flex justify-content-center lista">
+                        <a href="{{route('estadisticas')}}" type="button" class="btn  w-100 fs-4 text-white text-decoration-none bi bi-bar-chart-fill"> estadisticas</a>
+=======
                     <div class="w-100 d-flex mt-5 justify-content-center lista">
                         <a href="{{route('estadisticas')}}" type="button" class="btn  w-100 fs-4 text-white text-decoration-none">Estadisticas</a>
+>>>>>>> db90bb5174ea7a36562cadbc37e4c65d0e83acd8
                     </div>
             </ul>
         </nav> 

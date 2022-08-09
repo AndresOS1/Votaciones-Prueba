@@ -1,5 +1,5 @@
 #wrapper{
-    background-color: grey;
+    background-color: #437176;
     width: 100%;
   }
 section .body{
@@ -7,6 +7,13 @@ section .body{
     height: 100%;
     display: flex;
 }
+.barras{
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
 div .index-body{
     height: 100vh;
 }
@@ -34,7 +41,7 @@ div .index-body{
       margin-left: -400px;
   }
   .lista a:hover{
-      background-color: #254240;
+      background-color: grey;
   }
   .ul{
       background-color: #437176;

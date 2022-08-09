@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col mt-5">
                 <h1 class="text-center">Puestos de Votaciones</h1>
-                <table class="table mt-5">
+                <table cellspacing="0"class="table table-bordered table-responsive display compact no-wrap">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
