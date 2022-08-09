@@ -90,10 +90,12 @@ class EstadisticaController extends Controller
         $barrios=Barrios::all();
         $PuestosDeVotaciones=PuestosDeVotaciones::all();
 
-         $pdf = PDF::setOptions(['dpi' => 150,
-                'enable-javascript' => true,
-                'images' => true
-            ])->loadView('Estadisticas.pdf', compact('DatosDelVotantes', 'users','barrios','PuestosDeVotaciones','municipios'));
+         $pdf = PDF::loadView('Estadisticas.pdf', compact('DatosDelVotantes', 'users','barrios','PuestosDeVotaciones','municipios'))
+         ->setOption('enable-javascript', true)
+         ->setOption('images', true)
+         ->setOption('javascript-delay', 13000)
+         ->setOption('enable-smart-shrinking', true)
+         ->setOption('no-stop-slow-scripts', true);
             
         return $pdf->stream();    
     }
