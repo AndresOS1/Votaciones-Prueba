@@ -30,29 +30,23 @@ class EstadisticaController extends Controller
             $users=User::all();
             $barrios=Barrios::all();
             $PuestosDeVotaciones=PuestosDeVotaciones::all();
-       
-            // $datosy = DB::select('SELECT users.nombres, COUNT(id_votante) xd 
-            //                       FROM datos_del_votante 
-            //                       INNER JOIN users
-            //                       ON datos_del_votante.user_id = users.id
-            //                       GROUP BY users.nombres;');
-            // return $data1;  
+
+
             $dato1 = DB::select('SELECT COUNT(id_votante) xd
             FROM datos_del_votante
             GROUP BY user_id;');
 
             $datoxd =  json_encode($dato1);
 
-            // $dato1 = DatosDelVotante::select('COUNT(id_votante)')->groupBy('user_id');
             
             $users = User::all();
 
-            // $datosVotante = DatosDelVotante::all();
+         
 
             $data = [];
     
             foreach($users as $user){
-                if($user->tipoUsuario == "lider"){
+                if($user->tipoUsuario == "Lider"){
                    $data['label'][] = $user->nombres; 
                 }         
             }
@@ -69,17 +63,8 @@ class EstadisticaController extends Controller
                 //     $data['data'][] = $xdsss;
                 // }
             }
-            //  $data['data'][] = $dato3[0];
     
             $data['data'] = json_encode($data);
-
-        //     $pdf = PDF::setOptions(['dpi' => 150,
-        //     'enable-javascript' => true,
-        //     'images' => true
-        // ])->loadView('Estadisticas.estadisticas',  $data, compact('DatosDelVotantes', 'users','barrios','PuestosDeVotaciones','municipios'));
-            
-        //     return $pdf->stream();    
-            // return $pdf->download('Estadisticas.pdf');  
             return view('Estadisticas.estadisticas',  $data, compact('DatosDelVotantes', 'users','barrios','PuestosDeVotaciones','municipios'));
     }
 

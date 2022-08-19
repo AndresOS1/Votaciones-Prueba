@@ -27,14 +27,14 @@ class ReportesController extends Controller
     public function reporte(){
         $report=new ReportesController();
         $jasper=new JasperPHP();
-        $jasper->compile(__DIR__.'/../../../public/storage/report/reporteejemplo.jrxml')->execute();
-        $jasper->process(__DIR__.'/../../../public/storage/report/reporteejemplo.jasper',
+        $jasper->compile(__DIR__.'/../../../public/storage/report/reporteVotaciones.jrxml')->execute();
+        $jasper->process(__DIR__.'/../../../public/storage/report/reporteVotaciones.jasper',
         false,
         ['pdf'],
         [],
         $report->conexion(),
     )->execute();
-    $path=storage_path('/app/public/report/reporteejemplo.pdf');
+    $path=storage_path('/app/public/report/reporteVotaciones.pdf');
     return response()->download($path);
     }
 

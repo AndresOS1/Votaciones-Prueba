@@ -28,7 +28,7 @@ class RegisterController extends Controller
                     'celular'=>'required',
                     'avatar '=>'required',
                     'userName'=>'required',
-                    'tipoUsuario'=>'required',
+                   
                     'password'=>'required'
                 ]);
             if(!$userName=User::where('userName','=',$request->userName)->first()){   
@@ -42,8 +42,9 @@ class RegisterController extends Controller
                         $user->nombres=$request->nombres;
                         $user->apellidos=$request->apellidos;
                         $user->celular=$request->celular;
-                        $user->tipoUsuario=$request->tipoUsuario;
+                        $user->tipoUsuario = 'Votante';
                         $user->password=Hash::make($request->password);
+                        $user->assignRole('Votante');
                         $user->save();
                         Alert::success('Registro Exitoso');
                         return redirect()->route('verLogin');

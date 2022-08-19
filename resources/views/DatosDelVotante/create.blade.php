@@ -49,7 +49,7 @@
                                         <select  id="" class="form-select form-control-lg" name="user_id" required>
                                             <option value="">Seleccione un Lider</option>
                                             @foreach ($users as $user)
-                                                @if($user->tipoUsuario == "lider")
+                                                @if($user->tipoUsuario == "Lider")
                                                 <option value="{{ $user->id}}">{{ $user->tipoUsuario }}-{{$user->nombres}}</option>
                                                 @endif
                                             @endforeach

@@ -9,7 +9,7 @@
                 <table cellspacing="0"class="table table-bordered table-responsive display compact no-wrap mt-2">
                     <div class="col-12 d-flex justify-content-end">
                         <a href="{{route('verestadisticas')}}"><button class="btn btn-primary btn1 ">Ver PDF</button> </a>
-                        <a href="{{route('descargarestadisticas')}}"><button class="btn btn-primary btn1 ">Descargar PDF</button> </a>
+                        <a href="{{route('jasper')}}"><button class="btn btn-primary btn1 ">Descargar PDF</button> </a>
                       </div>
                     <thead>
                         <tr>

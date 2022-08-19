@@ -68,6 +68,7 @@
                 </div>       
             </div>
             <ul class="list list-unstyled justify-content-start d-flex flex-wrap">
+                @can('PuestosDeVotaciones.index')
                <li id="" class="d-flex lista justify-content-center flex-wrap"> 
                 <a type="button" class="btn d-inline-block justify-content-start  ml-auto w-100 fs-4 text-white bi bi-mailbox2" data-toggle="collapse"
                 data-target="#list1" aria-expanded="false" aria-label="Togglenavigation">
@@ -77,11 +78,14 @@
                         <li class="d-flex justify-content-center ">
                                 <a class="fs-4 text-white nav-link w-100 d-flex justify-content-center" href="{{ route('PuestosDeVotaciones.index') }}">Ver puestos</a>
                         </li>
+                        @can('PuestosDeVotaciones.create')
                         <li class="d-flex justify-content-center w-100">
                             <a class="fs-4 text-white nav-link  w-100 d-flex justify-content-center" href="{{ route('PuestosDeVotaciones.create') }}">Registrar puesto</a>
-                        </li>                
+                        </li>  
+                        @endcan              
                     </ul>
                 </li>
+                @endcan
                 <a href=""></a>
                 <li id="" class="lista   d-flex justify-content-center flex-wrap"> 
                     <a type="button" class="btn  d-inline-block  ml-auto w-100 fs-4 text-white bi bi-clipboard2-data-fill" data-toggle="collapse"
@@ -91,9 +95,11 @@
                             <li class="d-flex justify-content-center w-100">
                                 <a class="fs-4 text-white nav-link  w-100 d-flex justify-content-center" href="{{route('DatosDelVotante.index')}}">Ver datos de los votantes</a>
                             </li>
+                            @can('DatosDelVotante.create')
                             <li class="d-flex justify-content-center w-100">
                                 <a class="fs-4 text-white nav-link  w-100 d-flex justify-content-center" href="{{route('DatosDelVotante.create')}}">registrar votante</a>
-                            </li>                
+                            </li>
+                            @endcan                
                         </ul>
                     </li>
                     <div class=" d-flex justify-content-center lista">

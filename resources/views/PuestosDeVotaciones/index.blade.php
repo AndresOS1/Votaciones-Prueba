@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col mt-5">
                 <h1 class="text-center">Puestos de Votaciones</h1>
-                <table cellspacing="0"class="table table-bordered table-responsive display compact no-wrap">
+                <table cellspacing="0"class="table table-bordered table-responsive display compact no-wrap mt-5">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -31,10 +31,14 @@
                                 @endforeach
                                 <td>
                                     <form action="{{ route('eliminarpuesto',$PuestosDeVotacion-> id_puesto)}}" method="POST">
+                                        @can('editarpuesto')
                                         <a class="btn btn-sm btn-success" href="{{route('editarpuesto',$PuestosDeVotacion->id_puesto)}}"><i class="bi bi-pencil-square"></i></a>
+                                        @endcan
                                         @csrf
                                         @method('DELETE')
+                                        @can('eliminarpuesto')
                                         <button type="submit" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
+                                        @endcan
                                     </form>
                                 </td>
                             </tr>

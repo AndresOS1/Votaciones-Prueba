@@ -39,21 +39,32 @@ Route::get('/logout',[LoginController::class,'logout'])->name('cerrarSesion');
 //home
 Route::get('/home',[HomeController::class,'verHome'])->name('home');
 
-//PUESTO DE VOTACIONES
-Route::get('/PuestosDeVotaciones.index',[PuestosDeVotacionesController::class,'index'])->name('PuestosDeVotaciones.index');
-Route::get('/PuestosDeVotaciones.create',[PuestosDeVotacionesController::class,'create'])->name('PuestosDeVotaciones.create');
-Route::post('/PuestosDeVotaciones.store',[PuestosDeVotacionesController::class,'store'])->name('PuestosDeVotaciones.store');
-Route::get('/editarpuesto/{id}',[PuestosDeVotacionesController::class,'edit'])->name('editarpuesto');
-Route::put('/actualizarpeusto/{id}',[PuestosDeVotacionesController::class,'update'])->name('PuestosDeVotaciones.uptate');
-Route::delete('/eliminarpuesto/{id}',[PuestosDeVotacionesController::class,'destroy'])->name('eliminarpuesto');
 
-//DATOS DEL VOTANTE
-Route::get('/DatosDelVotante.index',[DatosDelVotanteController::class,'index'])->name('DatosDelVotante.index');
-Route::get('/DatosDelVotante.create',[DatosDelVotanteController::class,'create'])->name('DatosDelVotante.create');
-Route::post('/DatosDelVotante.store',[DatosDelVotanteController::class,'store'])->name('DatosDelVotante.store');
-Route::get('/editarvotante/{id}',[DatosDelVotanteController::class,'edit'])->name('editarvotante');
-Route::put('/actualizarvotante/{id}',[DatosDelVotanteController::class,'update'])->name('DatosDelVotante.uptate');
-Route::delete('/eliminarvotante/{id}',[DatosDelVotanteController::class,'destroy'])->name('eliminarvotante');
+//PUESTO DE VOTACIONES
+Route::group(['middleware' => ['role:Admin']], function () {
+Route::get('/PuestosDeVotaciones.index',[PuestosDeVotacionesController::class,'index'])->name('PuestosDeVotaciones.index')->middleware('auth');
+Route::get('/PuestosDeVotaciones.create',[PuestosDeVotacionesController::class,'create'])->name('PuestosDeVotaciones.create')->middleware('auth');
+Route::post('/PuestosDeVotaciones.store',[PuestosDeVotacionesController::class,'store'])->name('PuestosDeVotaciones.store')->middleware('auth');
+Route::get('/editarpuesto/{id}',[PuestosDeVotacionesController::class,'edit'])->name('editarpuesto')->middleware('auth');
+Route::put('/actualizarpeusto/{id}',[PuestosDeVotacionesController::class,'update'])->name('PuestosDeVotaciones.uptate')->middleware('auth');
+Route::delete('/eliminarpuesto/{id}',[PuestosDeVotacionesController::class,'destroy'])->name('eliminarpuesto')->middleware('auth');
+});
+
+
+Route::group(['middleware' => ['role:Admin|Lider']], function () {
+        //DATOS DEL VOTANTE
+        Route::get('/DatosDelVotante.create',[DatosDelVotanteController::class,'create'])->name('DatosDelVotante.create');
+        Route::post('/DatosDelVotante.store',[DatosDelVotanteController::class,'store'])->name('DatosDelVotante.store');
+        Route::get('/editarvotante/{id}',[DatosDelVotanteController::class,'edit'])->name('editarvotante');
+        Route::put('/actualizarvotante/{id}',[DatosDelVotanteController::class,'update'])->name('DatosDelVotante.uptate');
+        Route::delete('/eliminarvotante/{id}',[DatosDelVotanteController::class,'destroy'])->name('eliminarvotante');
+});
+
+
+Route::group(['middleware' => ['role:Admin|Lider|Votante']], function () {
+    Route::get('/DatosDelVotante.index',[DatosDelVotanteController::class,'index'])->name('DatosDelVotante.index');
+});
+
 
 
 Route::get('/estadisticas',[EstadisticaController::class,'estadisticas'])->name('estadisticas');

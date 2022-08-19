@@ -39,15 +39,7 @@
                                         <label class="form-label" for="typeEmailX">Apellidos</label>
                                     </div>
 
-                                    <div class="form-outline form-white mb-4 mt-2">
-                                        <select  id="" class="form-select form-control-lg" name="tipoUsuario" required>
-                                            <option value="">Seleccione el tipo de usuario</option>
-                                            <option value="lider">lider</option>
-                                            <option value="capitan">capitan</option>
-                                                
-                                        </select>
-                                        <label class="form-label" for="typeEmailX">usuario</label>
-                                    </div>
+                                 
 
                                     <div class="form-outline form-white mb-4 mt-2">
                                         <input type="number" id="" class="form-control form-control-lg"

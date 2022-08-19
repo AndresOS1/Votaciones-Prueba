@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col mt-5">
                 <h1 class="text-center">Puestos de Votaciones</h1>
-                <table cellspacing="0"class="table table-bordered table-responsive display compact no-wrap">
+                <table cellspacing="0"class="table table-bordered table-responsive display compact no-wrap mt-5">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -19,7 +19,9 @@
                             <th scope="col">Lider</th>
                             <th scope="col">Barrio</th>
                             <th scope="col">Puesto de Votacion</th>
+                            @can('editarvotante')
                             <th scope="col">Opciones</th>
+                            @endcan
 
                         </tr>
                     </thead>
@@ -59,10 +61,14 @@
                                 @endforeach
                                 <td>
                                     <form action="{{ route('eliminarvotante',$DatosDelVotante->id_votante)}}" method="POST">
+                                        @can('editarvotante')
                                         <a class="btn btn-sm btn-success" href="{{route('editarvotante',$DatosDelVotante->id_votante)}}"><i class="bi bi-pencil-square"></i></a>
+                                        @endcan
                                         @csrf
+                                        @can('eliminarvotante')
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
+                                        @endcan
                                     </form>
                                 </td>
                             </tr>

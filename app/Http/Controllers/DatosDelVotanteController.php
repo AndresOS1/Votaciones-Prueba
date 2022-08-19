@@ -10,6 +10,7 @@ use App\Models\User;
 use App\Models\Barrios;
 use Illuminate\Support\Facades\Validator;
 use RealRashid\SweetAlert\Facades\Alert;
+use Spatie\Permission\Models\Role;
 class DatosDelVotanteController extends Controller
 {
     /**
@@ -25,7 +26,8 @@ class DatosDelVotanteController extends Controller
         $users=User::all();
         $barrios=Barrios::all();
         $PuestosDeVotaciones=PuestosDeVotaciones::all();
-        return view ('DatosDelVotante.index', compact('DatosDelVotantes', 'users','barrios','PuestosDeVotaciones','municipios') );
+        $roles = Role::all();
+        return view ('DatosDelVotante.index', compact('DatosDelVotantes', 'users','barrios','PuestosDeVotaciones','municipios', 'roles') );
     }
 
     /**
