@@ -35,8 +35,8 @@ class datos_del_votanteSeeder extends Seeder
             'telefono' => '123432234',
             'cedula' => '12343234',
             'mesa' => '12',
-            'user_id' => '2',
-            'barrio_id' => '19',
+            'user_id' => '3',
+            'barrio_id' => '9',
             'puestos_de_votaciones_id' => '2',
         ]);
     }
